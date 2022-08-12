@@ -1,6 +1,43 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @construction %>
+<table class="table table-bordered table-dark table-hover w-50">
+<thead>
+<tr>
+<th>ID</th>
+<th>Nombre de obra</th>
+<th>Fecha de inicio</th>
+<th>Fecha de termino</th>
+<th>Costo</th>
+<th>Calle</th>
+<th>Numero</th>
+<th>Ciudad</th>
+<th>Estado</th>
+<th>Codigo Postal</th>
+<th>Materiales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><%= @construction.id %></td>
+<td><%= @construction.name %></td>
+<td><%= @construction.startdate %></td>
+<td><%= @construction.enddate %></td>
+<td><%= @construction.cost %></td>
+<td><%= @construction.street %></td>
+<td><%= @construction.number %></td>
+<td><%= @construction.city %></td>
+<td><%= @construction.state %></td>
+<td><%= @construction.postcode %></td>
+<td>
+<%= @construction.resources.each do |r| %>
+  <%= r.name %>
+  <p>AQUI</p>
+<% end %>
+</td>
+</th>
+</tr>
+</tbody>
+</table>
 
 <div>
   <%= link_to "Edit this construction", edit_construction_path(@construction) %> |

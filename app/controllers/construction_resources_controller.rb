@@ -1,5 +1,6 @@
 class ConstructionResourcesController < ApplicationController
   before_action :set_construction_resource, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /construction_resources or /construction_resources.json
   def index

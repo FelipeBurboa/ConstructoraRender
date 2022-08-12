@@ -1,5 +1,6 @@
 class ConstructionsController < ApplicationController
   before_action :set_construction, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /constructions or /constructions.json
   def index
@@ -8,6 +9,7 @@ class ConstructionsController < ApplicationController
 
   # GET /constructions/1 or /constructions/1.json
   def show
+    
   end
 
   # GET /constructions/new

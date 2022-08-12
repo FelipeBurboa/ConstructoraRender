@@ -1,6 +1,7 @@
 class ResourcesController < ApplicationController
   before_action :set_resource, only: %i[ show edit update destroy ]
   before_action :set_select_collections, only: [:edit, :update, :new, :create]
+  before_action :authenticate_user!
   
   # GET /resources or /resources.json
   def index

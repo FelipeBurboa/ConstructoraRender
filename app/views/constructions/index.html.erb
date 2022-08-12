@@ -1,14 +1,27 @@
-<p style="color: green"><%= notice %></p>
+<!-- <p style="color: green"><%= notice %></p> -->
 
-<h1>Constructions</h1>
+<h1>Obras</h1>
 
+<table class="table table-bordered table-dark table-hover w-50">
+<thead>
+<tr>
+<th>ID</th>
+<th>Nombre de obra</th>
+<th>Fecha de inicio</th>
+<th>Fecha de termino</th>
+<th>Mostrar más</th>
+</tr>
+</thead>
+<tbody>
 <div id="constructions">
   <% @constructions.each do |construction| %>
-    <%= render construction %>
-    <p>
-      <%= link_to "Show this construction", construction %>
-    </p>
+    <tr><%= render construction %>
+      <td> <%= link_to "Show this construction", construction %> </td>
+    </tr>
   <% end %>
+
+  </tbody>
+</table>
 </div>
 
 <%= link_to "New construction", new_construction_path %>
