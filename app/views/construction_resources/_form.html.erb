@@ -1,0 +1,32 @@
+<%= form_with(model: construction_resource) do |form| %>
+  <% if construction_resource.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(construction_resource.errors.count, "error") %> prohibited this construction_resource from being saved:</h2>
+
+      <ul>
+        <% construction_resource.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :resource_id, style: "display: block" %>
+    <%= form.text_field :resource_id %>
+  </div>
+
+  <div>
+    <%= form.label :construction_id, style: "display: block" %>
+    <%= form.text_field :construction_id %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

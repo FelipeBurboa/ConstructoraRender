@@ -1,0 +1,76 @@
+<%= form_with(model: construction) do |form| %>
+  <% if construction.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(construction.errors.count, "error") %> prohibited this construction from being saved:</h2>
+
+      <ul>
+        <% construction.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :startdate, style: "display: block" %>
+    <%= form.date_field :startdate %>
+  </div>
+
+  <div>
+    <%= form.label :enddate, style: "display: block" %>
+    <%= form.date_field :enddate %>
+  </div>
+
+  <div>
+    <%= form.label :cost, style: "display: block" %>
+    <%= form.number_field :cost %>
+  </div>
+
+  <div>
+    <%= form.label :street, style: "display: block" %>
+    <%= form.text_field :street %>
+  </div>
+
+  <div>
+    <%= form.label :number, style: "display: block" %>
+    <%= form.text_field :number %>
+  </div>
+
+  <div>
+    <%= form.label :city, style: "display: block" %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.label :state, style: "display: block" %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :postcode, style: "display: block" %>
+    <%= form.text_field :postcode %>
+  </div>
+
+  
+
+ <div>
+    <%= form.label :resources, style: "display: block"%>
+    <%= form.collection_check_boxes(:resource_ids, @resources, :id, :name) do |b| %>
+      <%= b.label class: "label_checkbox" do %>
+        <%= b.check_box + b.text %>
+        <%= number_field("construction[resources_quantity]", b.value, value:@construction.getQuantityId(b.value)) %>
+      <% end %>
+    <% end %>
+  </div>
+
+    </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

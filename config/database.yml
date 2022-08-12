@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  username: postgres
+  password: brpkdg
+  host: 127.0.0.1
+  port: 5432
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: examendemo_development
+
+test:
+  <<: *default
+  database: examendemo_test
+
+
+production:
+  <<: *default
+  database: examen_production
+  username: postgres
+  password: <%= ENV["EDIFICIOS_DATABASE_PASSWORD"] %>
