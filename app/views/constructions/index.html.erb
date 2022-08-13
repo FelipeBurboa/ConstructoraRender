@@ -2,6 +2,20 @@
 
 <h1>Obras</h1>
 
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :name_cont ,"Nombre", class: "form-label"%>
+  <%= f.search_field :name_cont%>
+    <%= f.submit %>
+  <% end %>
+
+  <%= search_form_for @q do |e| %>
+<%= e.label :id_eq ,"ID", class: "form-label"%>
+  <%= e.search_field :id_eq%>
+   <%= e.submit %>
+  <% end %>
+
+
 <table class="table table-bordered table-dark table-hover w-50">
 <thead>
 <tr>

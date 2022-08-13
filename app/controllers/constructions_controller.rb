@@ -4,7 +4,9 @@ class ConstructionsController < ApplicationController
 
   # GET /constructions or /constructions.json
   def index
-    @constructions = Construction.all
+    @q = Construction.ransack(params[:q])
+    @constructions = @q.result(distinct: true)
+    #@constructions = Construction.all
   end
 
   # GET /constructions/1 or /constructions/1.json

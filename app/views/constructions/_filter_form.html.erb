@@ -1,0 +1,6 @@
+<%= search_form_for @q, class:"d-flex mb-3" do |f|%>
+    <%= f.select :constructions_eq, 
+      @constructions.all.map { |cat| [cat.name, cat.name] },
+      { include_blank: true }, { class: 'form-control' } %>
+    <%= f.submit "Filter", class: "btn btn-outline-secondary" %>
+<% end %>
