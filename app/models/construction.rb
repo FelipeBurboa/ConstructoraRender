@@ -7,8 +7,14 @@ class Construction < ApplicationRecord
         quantities.each do |resource_id, quantity|
             if quantity != ""
                 temp_resource = self.construction_resources.where(resource_id: resource_id.to_i).first
-                temp_resource.quantity = quantity.to_i
-                temp_resource.save
+                if quantity.nil?
+                    temp_resource.quantity = ""
+                    temp_resource.save
+                else
+                    temp_resource.quantity = quantity.to_i
+                    temp_resource.save
+                end 
+                
             end
         end
     end

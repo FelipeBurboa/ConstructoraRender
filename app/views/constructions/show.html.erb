@@ -29,10 +29,14 @@
 <td><%= @construction.state %></td>
 <td><%= @construction.postcode %></td>
 <td>
-<%= @construction.resources.each do |r| %>
-  <%= r.name %>
-  <p>AQUI</p>
-<% end %>
+    <% @consctructionresources.each do |rc| %>
+    <div class="mb-2">
+    <% if rc.construction_id == @construction.id %>
+    Nombre: <%= rc.resource.name %>
+    Cantidad: <%= rc.quantity %>
+    <% end %>
+    </div>
+    <% end %>
 </td>
 </th>
 </tr>

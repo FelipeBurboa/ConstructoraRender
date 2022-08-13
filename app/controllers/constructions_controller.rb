@@ -9,7 +9,7 @@ class ConstructionsController < ApplicationController
 
   # GET /constructions/1 or /constructions/1.json
   def show
-    
+    @consctructionresources = ConstructionResource.all
   end
 
   # GET /constructions/new
