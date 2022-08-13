@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+#
+#10.times do |index|
+#    Brand.create!(
+#        name: Faker::Company.name
+#    )
+#end
+#
+#10.times do |index|
+#    Category.create!(
+#        name: Faker::Commerce.material
+#    )
+#end
+
+
