@@ -2,7 +2,7 @@
 <p>Find me in app/views/home/index.html.erb</p>
 
 <% if current_user %>
-    <p>Hola! [<%=current_user.role%>] </p>
+    <p>Hola! <%= current_user.name %> [<%=current_user.role%>] </p>
 <% else %>
     <p>No estas logeado!</p>
 <% end %>
