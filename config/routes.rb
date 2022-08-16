@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :managers
   resources :construction_resources
   resources :constructions
   resources :resources

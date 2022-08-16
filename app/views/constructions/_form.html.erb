@@ -68,6 +68,15 @@
     <% end %>
   </div>
 
+  <div>
+    <%= form.label :users,'Encargados', style: "display: block"%>
+    <%= form.collection_check_boxes(:user_ids, @user, :id, :name) do |u| %>
+      <%= u.label class: "label_checkbox" do %>
+        <%= u.check_box + u.text %>
+      <% end %>
+    <% end %>
+  </div>
+
     </div>
 
   <div>

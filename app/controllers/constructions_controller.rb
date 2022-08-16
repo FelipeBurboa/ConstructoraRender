@@ -11,18 +11,21 @@ class ConstructionsController < ApplicationController
 
   # GET /constructions/1 or /constructions/1.json
   def show
-    @consctructionresources = ConstructionResource.all
+    @constructionresources = ConstructionResource.all
+    @managers = Manager.all
   end
 
   # GET /constructions/new
   def new
     @construction = Construction.new
     @resources = Resource.all
+    @user = User.all
   end
 
   # GET /constructions/1/edit
   def edit
     @resources = Resource.all
+    @user = User.all
   end
 
   # POST /constructions or /constructions.json
@@ -46,6 +49,7 @@ class ConstructionsController < ApplicationController
     respond_to do |format|
       if @construction.update(construction_params)
         @construction.addQuantity(params[:construction][:resources_quantity]) #test
+        @construction.addManager(params[:construction])
         format.html { redirect_to construction_url(@construction), notice: "Construction was successfully updated." }
         format.json { render :show, status: :ok, location: @construction }
       else
@@ -73,6 +77,6 @@ class ConstructionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def construction_params
-      params.require(:construction).permit(:name, :startdate, :enddate, :cost, :street, :number, :city, :state, :postcode,{resource_ids: []})
+      params.require(:construction).permit(:name, :startdate, :enddate, :cost, :street, :number, :city, :state, :postcode,{resource_ids: []},{user_ids: []})
     end
 end

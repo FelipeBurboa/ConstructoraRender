@@ -1,7 +1,10 @@
 class Construction < ApplicationRecord
     has_many :construction_resources, dependent: :destroy
+    has_many :managers, dependent: :destroy
     has_many :resources, through: :construction_resources
+    has_many :users, through: :managers
     accepts_nested_attributes_for :construction_resources, reject_if: :all_blank, allow_destroy: true
+    accepts_nested_attributes_for :managers, reject_if: :all_blank, allow_destroy: true
 
 
     def addQuantity(quantities)
@@ -20,5 +23,6 @@ class Construction < ApplicationRecord
         end
     end
 
+  
 
 end
