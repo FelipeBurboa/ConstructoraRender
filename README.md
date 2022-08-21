@@ -10,6 +10,8 @@ Things you may want to cover:
 * Esto se puede cambiar por consola y ajustando su role: 0 - Usuario / 1 - Encargado / 2 - Administrador 
 * Los usuarios creados por seed seran: 1@example.com, 2@example.com y 3@example.com todos con password 'password'
 * Entrar a /admin para ver el active admin con los siguiente datos: email 'admin@example.com' y password 'password'
+* Puede ver la info entregada por la API en /api/news
+
 * Ruby version
 
 * System dependencies
