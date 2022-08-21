@@ -1,6 +1,8 @@
 <div id="<%= dom_id brand %>">
 <td><%= brand.id%> </td>
 <td><%= brand.name%></td>
+<td><%= image_tag brand.photo, style:'width: 50px' unless brand.photo.blank? %></td>
+<td><%= link_to 'Download', rails_blob_path(brand.photo, disposition: 'attachment') unless brand.photo.blank?%></td>
 </div>
 
 
