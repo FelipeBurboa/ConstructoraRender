@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root to: "home#index"
+  get 'api/news'
+  get 'api/:date1/:date2', to: 'api#between_dates'
 end

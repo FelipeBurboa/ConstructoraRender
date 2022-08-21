@@ -1,4 +1,5 @@
 class Construction < ApplicationRecord
+    paginates_per 5
     has_many :construction_resources, dependent: :destroy
     has_many :managers, dependent: :destroy
     has_many :resources, through: :construction_resources

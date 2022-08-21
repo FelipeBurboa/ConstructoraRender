@@ -5,7 +5,7 @@ class ConstructionsController < ApplicationController
   # GET /constructions or /constructions.json
   def index
     @q = Construction.ransack(params[:q])
-    @constructions = @q.result(distinct: true)
+    @constructions = @q.result(distinct: true).order(id: :desc).page(params[:page])
     #@constructions = Construction.all
   end
 

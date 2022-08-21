@@ -38,4 +38,8 @@
 </table>
 </div>
 
-<%= link_to "New construction", new_construction_path %>
+<div class="d-flex justify-content-end">
+  <%= paginate @constructions, theme: 'bootstrap-5' %>
+</div>
+
+<%= link_to "New construction", new_construction_path, data: {turbo: false} %>
