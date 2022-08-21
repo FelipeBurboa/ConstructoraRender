@@ -82,3 +82,4 @@ end
 
 gem "devise", "~> 4.8"
 gem 'ransack'
+gem 'aws-sdk-s3'

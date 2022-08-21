@@ -22,6 +22,6 @@ require 'faker'
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
-User.create!(email: '5@example.com', name: 'Esteban', role: 0, password: 'password', password_confirmation: 'password')
-User.create!(email: '6@example.com', name: 'Omar', role: 1, password: 'password', password_confirmation: 'password')
-User.create!(email: '7@example.com', name: 'Ramon', role: 2, password: 'password', password_confirmation: 'password')
+User.create!(email: '1@example.com', name: 'Esteban', role: 0, password: 'password', password_confirmation: 'password')
+User.create!(email: '2@example.com', name: 'Omar', role: 1, password: 'password', password_confirmation: 'password')
+User.create!(email: '3@example.com', name: 'Ramon', role: 2, password: 'password', password_confirmation: 'password')
