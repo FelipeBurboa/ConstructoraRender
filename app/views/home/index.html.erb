@@ -1,8 +1,17 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
 
 <% if current_user %>
-    <p>Hola! <%= current_user.name %> [<%=current_user.role%>] </p>
+    <div class="d-flex justify-content-md-center mt-5">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Hola! <%= current_user.name %> [<%=current_user.role%>]</h5>
+    <p class="card-text">Bienvenido a la aplicacion para crear obras.</p>
+    <a><%= link_to 'Obras', constructions_path, class:"nav-link" %></a>
+    <a><%= link_to 'Materiales', resources_path, class:"nav-link" %></a>
+    <a><%= link_to 'Categorias', categories_path, class:"nav-link" %></a>
+    <a><%= link_to 'Marcas', brands_path, class:"nav-link" %></a>
+  </div>
+</div>
+</div>
 <% else %>
     <p>No estas logeado!</p>
 <% end %>

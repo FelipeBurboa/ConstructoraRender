@@ -1,5 +1,6 @@
 
-<h1>Marcas</h1>
+<h1 class="d-flex justify-content-md-center">Marcas</h1>
+<div class="d-flex justify-content-md-center">
 <table class="table table-bordered table-dark table-hover w-50">
 <thead>
 <tr>
@@ -7,18 +8,25 @@
 <th>Marcas</th>
 <th>Foto</th>
 <th>Descargar</th>
+<th>Mostrar más</th>
 </tr>
 </thead>
 <tbody>
 <div id="brands">
     <% @brands.each do |brand| %>
     <tr>
-      <%= render brand %>   
+      <%= render brand %>
+      <td> <%= link_to "Ver", brand %> </td>      
       </tr>
     <% end %>
 </tbody>
 </table>
 </div>
-<%= link_to "New brand", new_brand_path, class: "btn btn-outline-primary" %>
+
+</div>
+
+<div class="d-flex justify-content-md-center">
+<%= link_to "Nueva Marca", new_brand_path, class: "btn btn-outline-primary" %>
+</div>
 
 

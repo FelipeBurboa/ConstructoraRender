@@ -1,21 +1,23 @@
 <!-- <p style="color: green"><%= notice %></p> -->
 
-<h1>Obras</h1>
+<h1 class="d-flex justify-content-md-center">Obras</h1>
 
+<div class="d-flex justify-content-md-center">
 <%= search_form_for @q do |f| %>
-
   <%= f.label :name_cont ,"Nombre", class: "form-label"%>
   <%= f.search_field :name_cont%>
     <%= f.submit %>
   <% end %>
-
+</div>
+<div class="d-flex justify-content-md-center">
   <%= search_form_for @q do |e| %>
 <%= e.label :id_eq ,"ID", class: "form-label"%>
   <%= e.search_field :id_eq%>
    <%= e.submit %>
   <% end %>
-
-
+</div>
+ 
+ <div class="d-flex justify-content-md-center">
 <table class="table table-bordered table-dark table-hover w-50">
 <thead>
 <tr>
@@ -38,8 +40,11 @@
 </table>
 </div>
 
-<div class="d-flex justify-content-end">
-  <%= paginate @constructions, theme: 'bootstrap-5' %>
 </div>
 
-<%= link_to "New construction", new_construction_path, data: {turbo: false} %>
+<div class="d-flex justify-content-md-center">
+  <%= paginate @constructions, theme: 'bootstrap-5' %>
+</div>
+<div class="d-flex justify-content-md-center">
+<%= link_to "Nueva Construccion", new_construction_path, class: "btn btn-outline-primary" %>
+</div>
