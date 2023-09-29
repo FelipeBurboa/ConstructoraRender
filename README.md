@@ -4,7 +4,7 @@ This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
-
+* https://construccionapp.onrender.com/
 * Correr rails db:create, rails db:migrate y rails db:seed 
 * Todos los usuarios creados luego del seed seran de rol "usuario" por default
 * Esto se puede cambiar por consola y ajustando su role: 0 - Usuario / 1 - Encargado / 2 - Administrador 
